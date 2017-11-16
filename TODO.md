@@ -28,14 +28,6 @@ Q:activeMQ和kafka原理及优劣对比。
 Q:java的反射机制及反射机制几个常用的地方。
 ===
 
-
-Q:jdk源码中的集合部分。
-===
-A:Iterator,Collection,Map,数组,链表,堆栈,迭代器
----
->![Image text](https://github.com/IceDarron/Note/blob/master/Image/jdk_collection.png)
-
-
 Q:jdk源码中的并发包。
 ===
 
