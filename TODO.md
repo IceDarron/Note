@@ -40,6 +40,9 @@ Q:jdk源码中的泛型。
 Q:jdk源码中的异常。
 ===
 
+Q:jdk源码中的ConcurrentHashMap分段锁和ReentrantLock。
+===
+
 Q:类加载原理，delegate和classloader如何造成内存泄漏。
 ===
 
