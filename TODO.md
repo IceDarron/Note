@@ -30,7 +30,7 @@ Q:java的反射机制及反射机制几个常用的地方。
 Q:jdk源码中的并发包。
 ===
 
-Q:jdk源码中的IO/NIO。netty的原理及源码。
+Q:netty的原理及源码。
 ===
 
 
@@ -41,7 +41,7 @@ Q:类加载原理，delegate和classloader如何造成内存泄漏。
 Q:动态代理和CGLIB。
 ===
 
-Q:ConcurrentHashMap，CopyOnWrite，线程池，CAS，AQS
+Q:CopyOnWrite，线程池，AQS
 ===
 
 Q:树结构。
