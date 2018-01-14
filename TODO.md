@@ -18,8 +18,6 @@ Q:什么是RCP，相关网络协议，序列化技术与SOA。
 Q:dubbo原理。
 ===
 
-Q:jms原理。
-===
 
 Q:activeMQ和kafka原理及优劣对比。
 ===
