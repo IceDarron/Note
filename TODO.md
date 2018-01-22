@@ -22,8 +22,6 @@ Q:dubbo原理。
 Q:activeMQ和kafka原理及优劣对比。
 ===
 
-Q:java的反射机制及反射机制几个常用的地方。
-===
 
 
 
