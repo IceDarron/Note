@@ -58,8 +58,6 @@ Q:Mongodb原理及常见参数调整。
 
 
 --------------
-https://www.cnblogs.com/luoxn28/p/6059881.html
-
 http://blog.csdn.net/csdnsevenn/article/details/78904928
 
 http://blog.csdn.net/james570/article/details/78394418
