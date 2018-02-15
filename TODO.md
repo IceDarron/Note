@@ -79,7 +79,8 @@ Q:get/post的区别、forward/重定向的区别
 Q:SOA和RPC，面向服务体系，大型分布式架构
 ===
 
-
+Q:K-Means算法
+===
 
 --------------
 http://blog.csdn.net/csdnsevenn/article/details/78904928
