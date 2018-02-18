@@ -61,9 +61,6 @@ Q:类加载机制，也就是双亲委派模型
 Q:分布式Session的几种实现方式
 ===
 
-Q:Session的实现原理
-===
-
 Q:Session和Cookie的区别和联系
 ===
 
