@@ -90,6 +90,10 @@ https://www.zhihu.com/question/263943566/answer/275103776
 
 https://zhuanlan.zhihu.com/p/33500307
 
+http://ictclas.nlpir.org/nlpir/
+
+
+
 介绍下以前做的项目，用到哪些技术及框架？
 网站访问速度比较慢，有什么优化办法？
 CPU高或内存高怎么排查，双高怎么办？
