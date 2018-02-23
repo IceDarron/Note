@@ -92,7 +92,9 @@ https://zhuanlan.zhihu.com/p/33500307
 
 http://ictclas.nlpir.org/nlpir/
 
+https://zhuanlan.zhihu.com/p/32785820
 
+http://ifeve.com/netty5-user-guide/
 
 介绍下以前做的项目，用到哪些技术及框架？
 网站访问速度比较慢，有什么优化办法？
