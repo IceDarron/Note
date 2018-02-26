@@ -55,9 +55,6 @@ Q:synchronized和ReentrantLock的区别
 Q:索引为什么使用树结构而不是Hash表
 ===
 
-Q:类加载机制，也就是双亲委派模型
-===
-
 Q:web应用中的Filter、Servlet、Listener
 ===
 
