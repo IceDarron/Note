@@ -55,9 +55,6 @@ Q:synchronized和ReentrantLock的区别
 Q:索引为什么使用树结构而不是Hash表
 ===
 
-Q:web应用中的Filter、Servlet、Listener
-===
-
 Q:HTTPS的实现原理
 ===
 
