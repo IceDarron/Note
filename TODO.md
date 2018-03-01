@@ -55,9 +55,6 @@ Q:synchronized和ReentrantLock的区别
 Q:索引为什么使用树结构而不是Hash表
 ===
 
-Q:web应用中的Filter、Servlet、Listener
-===
-
 Q:HTTPS的实现原理
 ===
 
@@ -95,29 +92,51 @@ http://ifeve.com/netty5-user-guide/
 
 https://www.cnblogs.com/zxf330301/articles/5252728.html
 
+https://zhuanlan.zhihu.com/p/34035723
+
 
 
 
 介绍下以前做的项目，用到哪些技术及框架？
+
 网站访问速度比较慢，有什么优化办法？
+
 CPU高或内存高怎么排查，双高怎么办？
+
 多台web服务器怎么负载，session共享怎么解决？
+
 单表过1000万，1亿怎么优化？
+
 有没用过消息队列，使用场景，怎么做高可用?多级缓存怎么设计，缓存雪崩怎么解决？
+
 冷、热缓存怎么处理，redis或memcached怎么做分片？
+
 线程同步有哪些，自旋锁、进程锁、线程锁使用场景？
+
 请介绍下IOCP？
+
 ORM自己写还是开源的，怎么实现？
+
 MVC或WebApi的生命周期，filter怎么实现？
+
 了解过分布式计算吗，介绍mapreduce？
+
 介绍下storm的消息可靠保障机制？
+
 缓存服务器比较多时，主从怎么同步？
+
 写开源项目或博客吗？
+
 介绍下async await跟thread，task，threadpool区别？
+
 多层架构怎么分？API权限怎么设计，怎么限流？
+
 SOA怎么设计，怎么注册发现，数据格式？
+
 数据库或表怎么拆分？
+
 跨库读取怎么做，ssis linkserver或框架整合？
+
 内网服务用webapi还是wcf？
 
 
