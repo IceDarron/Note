@@ -32,11 +32,13 @@ hadoop官网：http://hadoop.apache.org/releases.html#Download
 目录结构
 ===
 + bin
-|文件名称  |说明                                                                                 |
+
+|文件名称  |说明                                                                                 |
 | -------- |------------------------------------------------------------------------------------:|
 |hadoop	   |用于执行hadoop脚本命令，被hadoop-daemon.sh调用执行，也可以单独执行，一切命令的核心   |
 
 + sbin
+
 |文件名称  |说明                                                                                                                               |
 | -------- |----------------------------------------------------------------------------------------------------------------------------------:|
 |hadoop-daemon.sh	   |通过执行hadoop命令来启动/停止一个守护进程(daemon)；该命令会被bin目录下面所有以start或stop开头的所有命令调用来执行命令，
@@ -50,6 +52,7 @@ hadoop官网：http://hadoop.apache.org/releases.html#Download
 |stop-mapred.sh	       |停止MapReduce                                                                                                          |
 
 + etc
+
 |文件名称  |说明                                                                                                                               |
 | -------- |----------------------------------------------------------------------------------------------------------------------------------:|
 |core-site.xml	  |Hadoop核心全局配置文件，可以其他配置文件中引用该文件中定义的属性，如在hdfs-site.xml及mapred-site.xml中会引用该文件的属性；
@@ -82,7 +85,9 @@ Hadoop各个模块编译后的jar包所在的目录。
 ### Hadoop datanode无法启动的错误Incompatible namespaceIDs in /tmp/hadoop-ross/dfs/data解
 启动Hadoop伪分布式部署的过程中，发现datanode没有正常启动，日志报错：
 ```xml
-ERROR org.apache.hadoop.hdfs.server.datanode.DataNode: java.io.IOException: Incompatible namespaceIDs in /tmp/hadoop-root/dfs/data: namenode namespaceID = 1091972464; datanode namespaceID = 640175512
+ERROR org.apache.hadoop.hdfs.server.datanode.DataNode: java.io.IOException: 
+Incompatible namespaceIDs in /tmp/hadoop-root/dfs/data: namenode namespaceID = 1091972464;
+ datanode namespaceID = 640175512
 ```
 
 类似于：
