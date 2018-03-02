@@ -75,3 +75,33 @@ hadoop官网：http://hadoop.apache.org/releases.html#Download
 
 + share
 Hadoop各个模块编译后的jar包所在的目录。
+
+
+常见问题
+===
+### Hadoop datanode无法启动的错误Incompatible namespaceIDs in /tmp/hadoop-ross/dfs/data解
+启动Hadoop伪分布式部署的过程中，发现datanode没有正常启动，日志报错：
+```xml
+ERROR org.apache.hadoop.hdfs.server.datanode.DataNode: java.io.IOException: Incompatible namespaceIDs in /tmp/hadoop-root/dfs/data: namenode namespaceID = 1091972464; datanode namespaceID = 640175512
+```
+
+类似于：
+```xml
+Incompatible namespaceIDs in /tmp/hadoop-ross/dfs/data
+```
+
+原因：
+```xml
+Your Hadoop namespaceID became corrupted. Unfortunately the easiest thing to do reformat the HDFS.
+```
+
+解决方案：
+```xml
+You need to do something like this:
+
+bin/stop-all.sh
+
+rm -Rf /tmp/hadoop-your-username/*  -- 这句话是linux指令，相当于删除windows上的对应文件
+
+bin/hadoop namenode -format
+```
