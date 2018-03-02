@@ -105,3 +105,9 @@ rm -Rf /tmp/hadoop-your-username/*  -- 这句话是linux指令，相当于删除
 
 bin/hadoop namenode -format
 ```
+
+参考文献
+===
+http://blog.csdn.net/antgan/article/details/52067441
+
+https://www.cnblogs.com/wuxun1997/p/6847950.html
