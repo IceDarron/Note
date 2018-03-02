@@ -70,6 +70,10 @@ Q:K-Means算法
 Q:五大常用算法：分治、动态规划、贪心、回溯和分支界定
 ===
 
+Q:hadoop,docker,redis,spark,kafka,storm
+===
+
+
 
 --------------
 http://blog.csdn.net/csdnsevenn/article/details/78904928
