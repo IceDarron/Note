@@ -21,13 +21,90 @@ hadoop官网：http://hadoop.apache.org/releases.html#Download
 #### hadoop配置文件
 配置文件路径：\etc\hadoop\*
 
+配置项参考：https://www.cnblogs.com/sunxucool/p/3957407.html
+
+常用配置：
+
 + core-site.xml
-
+```xml
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+```
 + mapred-site.xml
-
+```xml
+<configuration>
+    <property>
+       <name>mapreduce.framework.name</name>
+       <value>yarn</value>
+    </property>
+    <property>
+       <name>mapred.job.tracker</name>
+       <value>hdfs://localhost:9001</value>
+    </property>
+</configuration>
+```
 + hdfs-site.xml
-
+```xml
+<configuration>
+    <!-- 这个参数设置为1，因为是单机版hadoop -->
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>    
+        <name>dfs.namenode.name.dir</name>    
+        <value>file:/hadoop/data/dfs/namenode</value>    
+    </property>    
+    <property>    
+        <name>dfs.datanode.data.dir</name>    
+        <value>file:/hadoop/data/dfs/datanode</value>  
+    </property>
+</configuration>
+```
 + yarn-site.xml
+```xml
+<configuration>
+    <property>
+       <name>yarn.nodemanager.aux-services</name>
+       <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+       <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+       <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+</configuration>
+```
+
+启动及停止
+===
+### 初始化
+在bin目录下执行：
+```text
+## 格式化namenode
+hdfs namenode -format
+```
+
+### 启动
+在sbin目录下执行：
+```text
+start-all.cmd
+```
+
+### 关闭
+在sbin目录下执行：
+```text
+stop-all.cmd
+```
+
+### 查看进程
+在sbin目录下执行：
+```text
+jps
+```
 
 目录结构
 ===
@@ -80,24 +157,24 @@ Hadoop各个模块编译后的jar包所在的目录。
 ===
 ### Hadoop datanode无法启动的错误Incompatible namespaceIDs in /tmp/hadoop-ross/dfs/data解
 启动Hadoop伪分布式部署的过程中，发现datanode没有正常启动，日志报错：
-```xml
+```log
 ERROR org.apache.hadoop.hdfs.server.datanode.DataNode: java.io.IOException: 
 Incompatible namespaceIDs in /tmp/hadoop-root/dfs/data: namenode namespaceID = 1091972464;
  datanode namespaceID = 640175512
 ```
 
 类似于：
-```xml
+```log
 Incompatible namespaceIDs in /tmp/hadoop-ross/dfs/data
 ```
 
 原因：
-```xml
+```text
 Your Hadoop namespaceID became corrupted. Unfortunately the easiest thing to do reformat the HDFS.
 ```
 
 解决方案：
-```xml
+```text
 You need to do something like this:
 
 bin/stop-all.sh
@@ -107,8 +184,21 @@ rm -Rf /tmp/hadoop-your-username/*  -- 这句话是linux指令，相当于删除
 bin/hadoop namenode -format
 ```
 
+### hadoop配置jdk问题
+```log
+Error: JAVA_HOME is incorrectly set.
+
+       Please update F:\hadoop\conf\hadoop-env.cmd
+```
+出现这种情况需要修改hadoop-env.cmd：
+```text
+set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_74
+```
+
 参考文献
 ===
-http://blog.csdn.net/antgan/article/details/52067441
+安装教程：http://blog.csdn.net/antgan/article/details/52067441
 
-https://www.cnblogs.com/wuxun1997/p/6847950.html
+安装教程：https://www.cnblogs.com/wuxun1997/p/6847950.html
+
+配置文件： https://www.cnblogs.com/sunxucool/p/3957407.html
