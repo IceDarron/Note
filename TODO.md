@@ -67,9 +67,6 @@ Q:SOA，面向服务体系，大型分布式架构
 Q:K-Means算法
 ===
 
-Q:五大常用算法：分治、动态规划、贪心、回溯和分支界定
-===
-
 Q:hadoop,docker,redis,spark,kafka,storm
 ===
 
