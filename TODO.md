@@ -99,6 +99,14 @@ https://zhuanlan.zhihu.com/p/34035723
 
 http://blog.csdn.net/congcong68/article/details/73013142
 
+http://www.cnblogs.com/likehua/p/3999538.html 
+
+http://www.92csz.com/study/linux/ 
+
+http://www.cnblogs.com/vinozly/p/5459498.html 
+
+http://www.2bowl.info/hbase-shell-%E6%93%8D%E4%BD%9C/
+
 
 
 介绍下以前做的项目，用到哪些技术及框架？
