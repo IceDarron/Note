@@ -40,7 +40,7 @@ E: Unable to lock the administration directory (/var/lib/dpkg/), is another proc
 #### 查看进程并杀死
 ```cmd
 ps -A | grep apt
-sudo kill -processnumber
+sudo kill -9 processnumber
 ```
 
 #### 删除锁定文件
