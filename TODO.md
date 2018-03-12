@@ -10,9 +10,6 @@ Q:AOP和IOC原理。
 Q:tomcat和nginx原理及常见参数调整。
 ===
 
-Q:什么是RCP，相关网络协议，序列化技术与SOA。
-===
-
 Q:dubbo原理。
 ===
 
@@ -20,9 +17,6 @@ Q:activeMQ和kafka原理及优劣对比。
 ===
 
 Q:netty的原理及源码。
-===
-
-Q:类加载原理，delegate和classloader如何造成内存泄漏。
 ===
 
 Q:动态代理和CGLIB。
@@ -65,6 +59,9 @@ Q:K-Means算法
 ===
 
 Q:hadoop,docker,redis,spark,kafka,storm
+===
+
+Q:docker用途及原理
 ===
 
 
