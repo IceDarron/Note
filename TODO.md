@@ -22,9 +22,6 @@ Q:netty的原理及源码。
 Q:动态代理和CGLIB。
 ===
 
-Q:CopyOnWrite，线程池，AQS
-===
-
 Q:树结构及其扩展（AVL树，红黑树，二叉树，平衡树）。
 ===
 
