@@ -48,9 +48,11 @@ touch /app/zookeeper/data/myid
 
 启动关闭及常用命令
 ===
-+ 启动 ：./zkServer.sh start
-+ 停止 ：./zkServer.sh stop
-+ 查看状态：./zkServer.sh status
+```text
+启动 ：./zkServer.sh start
+停止 ：./zkServer.sh stop
+查看状态：./zkServer.sh status
+```
 
 
 参考资料
