@@ -51,3 +51,8 @@ touch /app/zookeeper/data/myid
 + 启动 ：./zkServer.sh start
 + 停止 ：./zkServer.sh stop
 + 查看状态：./zkServer.sh status
+
+
+参考资料
+===
+http://blog.csdn.net/lihao21/article/details/51778255
