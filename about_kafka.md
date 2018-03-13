@@ -49,6 +49,7 @@ kafka生产者客户端命令：./kafka-console-producer.sh --broker-list localh
 kafka消费者客户端命令：./kafka-console-consumer.sh -zookeeper localhost:2181 --from-beginning --topic testKJ1   
 删除topic：./kafka-run-class.sh kafka.admin.DeleteTopicCommand --topic testKJ1 --zookeeper 127.0.0.1:2181 
            ./kafka-topics.sh --zookeeper localhost:2181 --delete --topic testKJ1  
+停止broker：bin/kafka-server-stop.sh
 ```
 
 参考资料
