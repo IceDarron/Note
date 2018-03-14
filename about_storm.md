@@ -1,11 +1,161 @@
 下载
 ===
+zeromq：http://zeromq.org/area:download
+
+jzmq：https://github.com/zeromq/jzmq
+
+python：https://www.python.org/downloads/
+
+storm：http://storm.apache.org/releases.html
 
 安装
 ===
++ 依赖JDK1.8 zeromq jzmq python2.7+
 
-启动
++ 安装zeromq
+
+```text
+# 直接安装不用考虑路径问题
+tar -xzf zeromq-2.1.7.tar.gz
+cd zeromq-2.1.7
+./configure
+make
+sudo make install
+sudo ldconfig 
+```
+
++ 安装jzmq
+
+```text
+# 直接安装不用考虑路径问题
+unzip jzmq-master.zip
+cd jzmq-master
+./autogen.sh
+./configure
+make
+make install
+```
+
++ 安装python
+
+```text
+tar –jxvf Python-2.6.6.tar.bz2
+cd Python-2.6.6
+./configure
+Make
+make install
+```
+
++ 安装storm
+
+> Storm集群中包含两类节点：主控节点Nimbus，它负责在Storm集群内分发代码，分配任务给工作机器，并且负责监控集群运行状态。集群中只能有一个Nimbus。
+工作节点Supervisor，负责监听从Nimbus分配给它执行的任务，据此启动或停止执行任务的工作进程。集群中可以有多个Supervisor，Supervisor可以和Nimbus装在同一台机器上，但不建议这么做。
+另外Nimbus上还可以运行UI程序，能够实时查看群集状态。
+
+### 安装nimbus
+```text
+unzip storm-0.9.0.1.zip
+mv storm-0.9.0.1 storm-nimbus
+```
+
+修改storm-nimbus/conf/storm.yaml文件
+
+```text
+# 每行开始要有一个空格。
+# 使用zmq作为底层Queue
+ storm.messaging.transport: "backtype.storm.messaging.zmq"
+
+# zookeeper群集列表 
+ storm.zookeeper.servers:
+ - "192.168.1.111"
+ - "192.168.1.112"
+ - "192.168.1.113"
+# zookeeper端口
+ storm.zookeeper.port: 2181
+ 
+# storm存储目录 
+ storm.local.dir: "/app/storm-nimbus/data"
+# nimbus ip
+ nimbus.host: "192.168.1.111"
+# storm-ui端口
+# ui.port: 8080
+```
+
+### 安装supervisor
+```text
+unzip storm-0.9.0.1.zip
+mv storm-0.9.0.1 storm-supervisor
+```
+
+修改storm-supervisor/conf/storm.yaml文件
+
+```text
+# 每行开始要有一个空格。
+# 使用zmq作为底层Queue
+ storm.messaging.transport: "backtype.storm.messaging.zmq"
+
+# zookeeper群集列表 
+ storm.zookeeper.servers:
+ - "192.168.1.111"
+ - "192.168.1.112"
+ - "192.168.1.113"
+# zookeeper端口
+ storm.zookeeper.port: 2181
+ 
+# storm存储目录 
+ storm.local.dir: "/app/storm-supervisor/data"
+# nimbus ip
+ nimbus.host: "192.168.1.111"
+# Worker进程使用的端口号
+ supervisor.slots.ports:
+ - 6700
+ - 6701
+ - 6702
+ - 6703
+
+# JVM内存设置 
+ worker.childopts: "-Xms1536m -Xmx1536m -Xmn378m -XX:SurvivorRatio=2 -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=65 -Xloggc:/app/storm-supervisor/logs/worker-%ID%-gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+HeapDumpOnOutOfMemoryError"
+```
+
+supervisor需要经常查看日志，有时候默认日志配置不利于查看日志，可以修改storm-supervisor/logback/cluster.xml文件。
+
+
+启动停止及常用命令
 ===
+```text
+### nimbus 相关命令
+启动nimbus：nohup bin/storm nimbus &
+启动UI：nohup bin/storm ui &
+停止nimbus：kill `ps aux | egrep '(daemon\.nimbus)|(storm\.ui\.core)' | fgrep -v egrep | awk '{print $2}'`
+```
+
+```text
+### nimbus 相关命令
+启动nimbus：nohup bin/storm supervisor &
+停止nimbus：kill `ps aux | fgrep storm-supervisor | fgrep -v 'fgrep' | awk '{print $2}'`
+```
+
+拓扑管理
+===
+在Nimbus服务器的/app/storm-nimbus目录下新建目录temp，然后把拓扑jar包上传到temp目录下，
+在/app/storm-nimbus/temp目录下执行下面的命令发布拓扑：
+
+```text
+# ../bin/storm jar是拓扑加载命令，后面加上jar参数表示发布拓扑
+# topology.storm.app-1.0.0.jar 拓扑jar包
+# topology.Topology 实体类，主类拓扑入口，每个拓扑jar都必须有一个。（需要有一个main函数？）
+# topology 拓扑名称
+../bin/storm jar topology.storm.app-1.0.0.jar topology.Topology topology 
+```
+
+通过查看supervisor上的日志和storm-ui可以查看拓扑是否发布成功，拓扑执行情况，storm-ui刷新速度较慢，批量（大于等于20条）数据执行。
+
+```text
+# 停止拓扑
+../bin/storm kill 拓扑名称 -2
+# 注意：无论是命令行方式还是UI方式，拓扑都不会马上停掉，storm会保证当前正在处理的tuple都处理完才会杀掉拓扑，所以需要访问UI首页确认拓扑不存在了再重新发布拓扑。
+```
+
 
 storm原理
 ===
