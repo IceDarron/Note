@@ -248,3 +248,5 @@ http://ifeve.com/storm-understanding-the-parallelism-of-a-storm-topology/
 http://blog.csdn.net/evankaka/article/details/61190291
 
 http://www.cnblogs.com/Jack47/p/storm_intro-1.html
+
+http://blog.csdn.net/babydavic/article/details/8263114
