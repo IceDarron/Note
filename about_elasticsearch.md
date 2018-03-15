@@ -153,7 +153,16 @@ abcde			(vint) 4 e
 例如当前文章号是16389（不压缩要用3个字节保存），上一文章号是16382，压缩后保存7（只用一个字节）。
 
 
+Elasticsearch是如何实现Master选举的
+===
++ Elasticsearch的选主是ZenDiscovery模块负责的，主要包含Ping（节点之间通过这个RPC来发现彼此）和Unicast（单播模块包含一个主机列表以控制哪些节点需要ping通）这两部分；
++ 对所有可以成为master的节点（node.master: true）根据nodeId字典排序，
+   每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是master节点。
++ 如果对某个节点的投票数达到一定的值（可以成为master节点数n/2+1）并且该节点自己也选举自己，那这个节点就是master。否则重新选举一直到满足上述条件。
++ 补充：master节点的职责主要包括集群、节点和索引的管理，不负责文档级别的管理；data节点可以关闭http功能。
+
 
 
 参考资料
 ===
+http://ginobefunny.com/post/elasticsearch_interview_questions/
