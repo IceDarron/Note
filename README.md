@@ -20,3 +20,6 @@ Note/TODO.md 存放需要解决的问题或者知识点
 
 并在这基础上增加python开发爬虫及机器学习等东西构成一个知识推介，问答系统。
 ```
+
+
+记录一个lintcode链接：http://www.lintcode.com
