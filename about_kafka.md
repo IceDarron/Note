@@ -45,6 +45,7 @@ delete.topic.enable=true
            tail -f logs/server.log –n200
 查看topic的详细信息：./kafka-topics.sh -zookeeper 127.0.0.1:2181 -describe -topic testKJ1
 创建topic：./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testKJ1
+查询kafka偏移量：./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092,localhost1:9092 --topic TEST_MONITOR -time -1
 kafka生产者客户端命令：./kafka-console-producer.sh --broker-list localhost:9092 --topic testKJ1  
 kafka消费者客户端命令：./kafka-console-consumer.sh -zookeeper localhost:2181 --from-beginning --topic testKJ1   
 删除topic：./kafka-run-class.sh kafka.admin.DeleteTopicCommand --topic testKJ1 --zookeeper 127.0.0.1:2181 
