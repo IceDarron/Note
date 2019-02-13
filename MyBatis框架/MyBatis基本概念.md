@@ -128,7 +128,3 @@ InnoDB适合：
 + 看你的MySQL现在已提供什么存储引擎: mysql> show engines;
 + 看你的MySQL当前默认的存储引擎: mysql> show variables like '%storage_engine%';
 + 你要看某个表用了什么引擎(在显示结果里参数engine后面的就表示该表当前用的存储引擎): mysql> show create table 表名;
-   
-
-
-
