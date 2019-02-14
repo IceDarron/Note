@@ -1,4 +1,4 @@
-跳跃表(Skip list)
+Q:跳跃表(Skip list)
 ===
 跳跃表(Skip List)是如图的一种数据结构，有以下几个基本特征：
 

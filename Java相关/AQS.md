@@ -34,3 +34,6 @@ AQS定义两种资源共享方式：Exclusive（独占，只有一个线程能�
 一般来说，自定义同步器要么是独占方法，要么是共享方式，
 他们也只需实现tryAcquire-tryRelease、tryAcquireShared-tryReleaseShared中的一种即可。
 但AQS也支持自定义同步器同时实现独占和共享两种方式，如ReentrantReadWriteLock。
+
+#### 参考文献
+https://www.cnblogs.com/daydaynobug/p/6752837.html

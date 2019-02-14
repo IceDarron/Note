@@ -27,7 +27,7 @@ public class UserDaoProxy implements IUserDao{
     public UserDaoProxy(IUserDao target) {
         this.target = target;
     }
-    
+
     @Override
     public void save() {
         System.out.println("开启事务");//扩展了额外功能
@@ -155,7 +155,7 @@ public class ProxyFactory implements MethodInterceptor{
     public ProxyFactory(Object target) {
         this.target = target;
     }
-    
+
     //为目标对象生成代理对象
     public Object getProxyInstance() {
         //工具类
