@@ -16,3 +16,5 @@ ObjcetInputStream采用默认的反序列化方式，对对象的非transient的
 ObjectOutputStream调用对象的writeObject(ObjectOutputStream out)的方法进行序列化。
 ObjectInputStream会调用对象的readObject(ObjectInputStream in)的方法进行反序列化。
 方法三：若类实现了Externalnalizable接口，且类必须实现readExternal(ObjectInput in)和writeExternal(ObjectOutput out)方法。
+
+https://blog.csdn.net/iteye_8567/article/details/82618046
