@@ -295,3 +295,7 @@ Q:Java内存模型与线程
 Q:JVM内存结构 VS Java内存模型 VS Java对象模型
 ===
 https://www.hollischuang.com/archives/2509
+
+Q:JVM内存模型操作
+===
+https://blog.csdn.net/l1394049664/article/details/81475380
