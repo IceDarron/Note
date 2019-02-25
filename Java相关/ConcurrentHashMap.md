@@ -20,3 +20,7 @@ ConcurrentHashMap中的HashEntry相对于HashMap中的Entry有一定的差异性
 + ConcurrentHashMap中的key和value值都不能为null，HashMap中key可以为null，HashTable中key不能为null。
 + ConcurrentHashMap是线程安全的类并不能保证使用了ConcurrentHashMap的操作都是线程安全的！
 + ConcurrentHashMap的get操作不需要加锁，put操作需要加锁
+
+### JDK8-改进
+
+https://blog.csdn.net/sihai12345/article/details/79383766
