@@ -201,4 +201,6 @@ set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_74
 
 安装教程：https://www.cnblogs.com/wuxun1997/p/6847950.html
 
-配置文件： https://www.cnblogs.com/sunxucool/p/3957407.html
+配置文件：https://www.cnblogs.com/sunxucool/p/3957407.html
+
+基本概念：http://www.importnew.com/21536.html
