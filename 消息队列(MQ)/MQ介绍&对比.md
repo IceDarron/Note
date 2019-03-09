@@ -60,3 +60,7 @@ ActiveMQ特性如下：
 + 支持Ajax
 + 支持与Axis的整合
 + 可以很容易得调用内嵌JMS provider，进行测试
+
+
+#### 参考资料
++ MQ使用场景&对比: https://blog.csdn.net/HD243608836/article/details/80217591
