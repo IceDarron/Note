@@ -75,5 +75,8 @@ ZooKeeper 的 Watcher 机制主要包括客户端线程、客户端 WatchManager
 参考资料
 ===
 https://blog.csdn.net/shengqianfeng/article/details/79508376  Java验证zookeeper的watcher机制
+
 https://blog.csdn.net/hohoo1990/article/details/78617336  wathcer机制理解
+
+https://www.cnblogs.com/raphael5200/p/5285583.html  工作原理
 
