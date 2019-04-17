@@ -12,6 +12,8 @@ storm：http://storm.apache.org/releases.html
 ===
 + 依赖JDK1.8 zeromq jzmq python2.7+
 
+注：storm1.0.0以上，已经不使用zeromq，应该是改为使用netty通讯，以下zeromq和jzmq不需要安装了。
+
 + 安装zeromq
 
 ```text
@@ -130,10 +132,12 @@ supervisor需要经常查看日志，有时候默认日志配置不利于查看�
 ```
 
 ```text
-### nimbus 相关命令
+### supervisor 相关命令
 启动nimbus：nohup bin/storm supervisor &
 停止nimbus：kill `ps aux | fgrep storm-supervisor | fgrep -v 'fgrep' | awk '{print $2}'`
+启动logviewer: nohup bin/storm logviewer & 
 ```
+logviewer是提供ui日志http访问的一个接口，如果不启动该进程，日志无法访问。此外还需要在客户端配置storm服务器的地址，即修改hosts文件。
 
 拓扑管理
 ===
