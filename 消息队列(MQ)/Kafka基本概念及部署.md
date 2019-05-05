@@ -53,8 +53,25 @@ kafka消费者客户端命令：./kafka-console-consumer.sh -zookeeper localhost
 停止broker：bin/kafka-server-stop.sh
 ```
 
+ISR（in-sync replica已同步的副本）列表
+===
+生产者生产消息的时候，通过request.required.acks参数来设置数据的可靠性。
+
+acks what happen
+0
+which means that the producer never waits for an acknowledgement from the broker.发过去就完事了，不关心broker是否处理成功，可能丢数据。
+
+1
+which means that the producer gets an acknowledgement after the leader replica has received the data. 当写Leader成功后就返回,其他的replica都是通过fetcher去同步的,所以kafka是异步写，主备切换可能丢数据。
+
+-1
+which means that the producer gets an acknowledgement after all in-sync replicas have received the data. 要等到isr里所有机器同步成功，才能返回成功，延时取决于最慢的机器。强一致，不会丢数据。
+
+
 参考资料
 ===
-http://blog.csdn.net/fengzheku/article/details/50585972
+http://blog.csdn.net/fengzheku/article/details/50585972  kafka删除topic
 
-http://blog.csdn.net/code52/article/details/50935849
+http://blog.csdn.net/code52/article/details/50935849  kafka常用命令
+
+https://www.jianshu.com/p/d3e963ff8b70  kafka详解
